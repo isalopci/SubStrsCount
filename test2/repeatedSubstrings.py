@@ -1,7 +1,9 @@
-# Python program that identifies how many substrings of 4 characters appear more
-#        than once along a main string of random lentgh and content.
+import re
 
-def generateSubStrings(originalStr: str):
+# Python function that identifies the substrings of 4 characters that appear 
+#        along a main string of random length and content.
+
+def generateSubStrings(originalStr: str) -> list:
     #Variable to store a list of substrings
     listSubStr = []
     
@@ -19,24 +21,36 @@ def generateSubStrings(originalStr: str):
     
     return listSubStr
 
-def inside_search(listSubStr, search_subStr: str) -> int:
-    count = 0
+# Python function that identifies how many substrings of 4 characters appear more
+#        than once along a main string of random length and content.
 
-    for i, word in enumerate(listSubStr):
-        if search_subStr == word:
-            count += 1
+def countSubStrs(originalStr: str) -> list[dict]:
+
+    #Create an empty dictionary to store each substring with more than once instance
+    subStrDict = {}
     
-    return count
+    #Obtains list of substrings in the original string 
+    listSubStr = generateSubStrings(originalStr)
 
-# Driver Code
-if __name__ == '__main__':
-    originalStr = "geekslovegeeks"
-    a = generateSubStrings(originalStr)
-    print(a)
-    for word in a:
-        count = inside_search(a,word)
+    # For each substring or 'word' in the list 
+    for word in listSubStr:
+
+        # Regular expression to get the indexes on the original string where there is an instance of the word
+        listIndexes = [i.start() for i in re.finditer(word, originalStr)]
+
+        #Number of instances
+        count = len(listIndexes)
+
+        #Adds a substring (in the dictionary) that has more than one instance in the original string
         if count > 1:
-            a.remove(word)
-            print(word,count)
-    #print(inside_search(a, 'eeks'))
-    #print(x for i,x in enumerate(a) if inside_search(a,x) > 1)
+            subStrDict[word] = count
+
+    return subStrDict
+
+
+# Driver Code to test 
+if __name__ == '__main__':
+
+    originalStr = "ilovebooksoncemybooksalwaymysbooksforevermybooks"
+    subStrDict = countSubStrs(originalStr)
+    print(subStrDict) 
