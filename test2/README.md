@@ -4,11 +4,11 @@ Author: Isabella Lopez Cifuentes
 
 Description: 
 
-This script has two functions:
+This script has a class repeatedSubstrings with two methods:
 
 generateSubStrs() is used to generate a list of substrings of a given string.
 
-countSubStrs() is used to identify how many substrings of 4 characters appear more than once along a given string. The functions’s only argument is a string and it returns a dictionary with the substrings and the number of instances of that substring in the main string. This functions uses the function generateSubStrs(). 
+countSubStrs() is used to identify how many substrings of 4 characters appear more than once along a given string. The methods’s only argument is a string and it returns a dictionary with the substrings and the number of instances of that substring in the main string. 
 
 Usage:
 
@@ -18,8 +18,9 @@ Open your terminal, cd into the directory test2. Once there, you can run the dri
 
 python repeatedSubstrings.py 
 
-or you can use the script functions as you wish by importing repeatedSubstrings.py file in your python script. For example: 
+or you can use the script class and methods as you wish by importing repeatedSubstrings.py file in your python script. For example: 
 
 from repeatedSubstrings import repeatedSubstrings
 
 for this, you have to copy repeaytedSubstrings.py file in the same path where you run your own python script.
+After importing repeatedSubstrings, you can make use of the class and its methods. 
