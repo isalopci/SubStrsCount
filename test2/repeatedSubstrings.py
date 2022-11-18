@@ -19,8 +19,24 @@ def generateSubStrings(originalStr: str):
     
     return listSubStr
 
+def inside_search(listSubStr, search_subStr: str) -> int:
+    count = 0
+
+    for i, word in enumerate(listSubStr):
+        if search_subStr == word:
+            count += 1
+    
+    return count
+
 # Driver Code
 if __name__ == '__main__':
     originalStr = "geekslovegeeks"
     a = generateSubStrings(originalStr)
     print(a)
+    for word in a:
+        count = inside_search(a,word)
+        if count > 1:
+            a.remove(word)
+            print(word,count)
+    #print(inside_search(a, 'eeks'))
+    #print(x for i,x in enumerate(a) if inside_search(a,x) > 1)
