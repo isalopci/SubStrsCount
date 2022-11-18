@@ -49,8 +49,8 @@ def countSubStrs(originalStr: str) -> list[dict]:
 
 
 # Driver Code to test 
-if __name__ == '__main__':
+#if __name__ == '__main__':
 
-    originalStr = "ilovebooksoncemybooksalwaymysbooksforevermybooks"
-    subStrDict = countSubStrs(originalStr)
-    print(subStrDict) 
+#    originalStr = "ilovebooksoncemybooksalwaymysbooksforevermybooks"
+#    subStrDict = countSubStrs(originalStr)
+#    print(subStrDict) 
